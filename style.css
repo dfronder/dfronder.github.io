@@ -1,32 +1,62 @@
-h1
-{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+html, body {
   margin: 0;
-  font-weight: bold;
-  color: white;
-  font-size: 80px;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-color);
 }
 
-body
-{
-  background-color: black;
+:root {
+  --bg-color: #F8F8F8;
+  --icon-color: #898989;
+  --square-color: #B7B7B7;
+  --icon-hover-color: #141414;
+  --icon-mobile-color: #141414;
 }
 
-.dots::after
-{
-  content: "";
-  animation: dots-animation 1.5s infinite steps(4);
+body.dark {
+  --bg-color: #141414;
+  --icon-color: #898989;
+  --square-color: #333333;
+  --icon-hover-color: #F8F8F8;
+  --icon-mobile-color: #F8F8F8;
 }
 
-@keyframes dots-animation
-{
-  0% { content: ""; }
-  25% { content: "."; }
-  50% { content: ".."; }
-  75% { content: "..."; }
-  100% { content: ""; }
+canvas {
+  display: block;
+}
+
+#themeToggle {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  padding: 0;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#themeToggle svg {
+  color: var(--icon-color);
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #themeToggle:hover svg {
+    color: var(--icon-hover-color);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  #themeToggle svg {
+    color: var(--icon-mobile-color);
+  }
 }
