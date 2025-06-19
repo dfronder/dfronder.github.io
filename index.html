@@ -3,16 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>David Fronder</title>
+  <title>DAVID FRONDER</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="seal.ico">
 </head>
 <body>
   <button id="themeToggle" aria-label="Toggle theme">
     <svg width="33" height="33" viewBox="0 0 33 33" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path d="M9.42871 9.42871H14.1426V18.8574H23.5713V23.5723H33V28.2861H28.2861V32.0576H4.71387V27.3438H0V4.71484H4.71387V0H9.42871V9.42871Z"/>
     </svg>
-  </button>  
+  </button>
+  <button id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="sideMenu">
+    <svg width="108" height="108" viewBox="0 0 108 108" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 78V70H89V78H18ZM18 58V50H89V58H18ZM18 38V30H89V38H18Z"/>
+    </svg>
+  </button>
+  <div id="centerBlock">
+    <div id="centerText">DFRONDER</div>
+    <div id="splashText">初期のスプラッシュ</div>
+  </div>
   <canvas id="canvas"></canvas>
+  <div id="footerNote">DAVID FRONDER, 2025</div>
+  <nav id="sideMenu">
+    <ul>
+      <li class="top-item disabled">
+        <div class="menu-link">
+          <span class="menu-label">GALLERY</span>
+          <div class="menu-subtext">COMING SOON!</div>
+        </div>
+      </li>
+      <li><a href="https://t.me/dfronder" target="_blank" rel="noopener noreferrer">WALL</a></li>
+      <li><a href="https://medium.com/@dfronder" target="_blank" rel="noopener noreferrer">MEDIUM</a></li>
+      <li><a href="https://github.com/dfronder" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
+      <li><a href="https://osu.ppy.sh/users/36158491" target="_blank" rel="noopener noreferrer">OSU!</a></li>
+      <li><a href="#">ABOUT</a></li>
+    </ul>
+  </nav>
   <script src="script.js"></script>
+  <script src="splash.js"></script>
 </body>
 </html>
