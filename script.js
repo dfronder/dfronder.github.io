@@ -87,7 +87,7 @@ function updateFontSize() {
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
   const sideMenu = document.getElementById('sideMenu');
-  const centerBlock = document.getElementById('centerBlock');
+  const splashText = document.getElementById('splashText');
   const footerNote = document.getElementById('footerNote');
 
   menuToggle.addEventListener('click', () => {
@@ -96,10 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.setAttribute('aria-expanded', isOpen);
 
     if (isOpen) {
-      centerBlock.classList.add('menu-open');
+      splashText.classList.add('menu-open');
       footerNote.classList.add('menu-open');
     } else {
-      centerBlock.classList.remove('menu-open');
+      splashText.classList.remove('menu-open');
       footerNote.classList.remove('menu-open');
     }
   });
