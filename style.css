@@ -14,6 +14,10 @@
   font-style: normal;
 }
 
+html {
+  font-size: 18px;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -49,16 +53,12 @@ canvas {
   display: block;
 }
 
-/* Theme change button */
-
 #themeToggle {
   position: absolute;
-  top: 30px;
-  right: 30px;
-  padding: 0;
-  margin: 0;
-  width: 40px;
-  height: 40px;
+  top: 1.875rem;
+  right: 1.875rem;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,16 +96,12 @@ canvas {
   transition: all 0.4s ease;
 }
 
-/* Main title */
-
 #centerText {
   font-family: '5x5 font', sans-serif;
-  font-size: clamp(2rem, var(--dynamic-font-size, 5vw), 8vw);
+  font-size: clamp(2rem, 9vw, 10vw);
   color: var(--font-color);
   line-height: 1.2;
 }
-
-/* Mobile version for main title */
 
 @media (max-aspect-ratio: 3 / 4) {
   #centerBlock {
@@ -114,14 +110,13 @@ canvas {
     justify-content: space-between;
     align-items: center;
     height: 100dvh;
-    padding: 30px 0 60px 0;
+    padding: 1.875rem 0 3.75rem 0;
     box-sizing: border-box;
     overflow: hidden;
-    gap: 20px;
+    gap: 1.25rem;
   }
 
   #centerText {
-    font-family: '5x5 font', sans-serif;
     font-size: clamp(2rem, 5vw, 8vw);
     flex-shrink: 0;
   }
@@ -131,17 +126,14 @@ canvas {
     text-align: center;
     writing-mode: horizontal-tb;
     white-space: normal;
-
     font-size: clamp(0.75rem, 4vw, 1.25rem);
     line-height: 1.2;
-
     max-height: 100%;
-    padding: 0 20px;
+    padding: 0 1.25rem;
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-
     box-sizing: border-box;
   }
 
@@ -155,22 +147,18 @@ canvas {
   }
 }
 
-/* Japanese Splashes */
-
 #splashText {
   font-family: 'JPFont', sans-serif;
-  font-size: clamp(1rem, var(--dynamic-font-size, 2.5vw), 3vw);
+  font-size: clamp(1rem, 3vw, 4vw);
   margin-top: 0.5rem;
   writing-mode: horizontal-tb;
   transition: all 0.4s ease;
   color: var(--font-color);
 }
 
-/* Footer */
-
 #footerNote {
   position: absolute;
-  bottom: 16px;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
   font-family: '5x5 font', sans-serif;
@@ -183,16 +171,14 @@ canvas {
   text-align: center;
 }
 
-/* Menu */
-
 #sideMenu {
   position: fixed;
-  top: 10px;
-  left: 10px;
-  width: 200px;
+  top: 0.625rem;
+  left: 0.625rem;
+  width: 12.5rem;
   padding: 1rem;
   background-color: transparent;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 5rem);
   box-sizing: border-box;
   z-index: 1100;
   overflow-y: auto;
@@ -225,7 +211,6 @@ canvas {
 #sideMenu .menu-link {
   display: block;
   padding: 0.5rem 0.75rem;
-  border-radius: 4px;
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--menu-link-color);
@@ -254,7 +239,7 @@ canvas {
   font-size: 1.125rem;
   display: block;
   padding: 0.5rem 0.75rem;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   transition: color 0.3s ease;
   cursor: pointer;
   background: none;
@@ -279,15 +264,13 @@ canvas {
   }
 }
 
-/* 'Hamburger' menu (for mobile) */
-
 #menuToggle {
   color: var(--icon-mobile-color);
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 60px;
-  height: 60px;
+  top: 1.25rem;
+  left: 1.25rem;
+  width: 3.75rem;
+  height: 3.75rem;
   background: none;
   border: none;
   font-size: 2rem;
@@ -296,7 +279,6 @@ canvas {
   display: none;
 }
 
-/* Side menu on mobile devices */
 @media (max-aspect-ratio: 3 / 4) {
   #menuToggle {
     display: flex;
@@ -311,7 +293,7 @@ canvas {
     pointer-events: none;
     transition: opacity 0.4s ease;
     position: absolute;
-    top: 80px;
+    top: 5rem;
     left: 0;
     width: 100vw;
     background-color: transparent;
@@ -352,11 +334,20 @@ canvas {
   }
 
   #sideMenu li {
+    font-size: 2rem;
     margin: 0.75rem 0;
   }
 
+  #sideMenu .menu-label {
+    font-size: 2rem;
+  }
+
+  #sideMenu .menu-subtext {
+    font-size: 1.2rem;
+  }
+
   #sideMenu a {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-family: '5x5 font', sans-serif;
     color: var(--font-color);
     text-decoration: none;
