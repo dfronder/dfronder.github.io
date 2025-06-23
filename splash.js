@@ -69,41 +69,48 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function setSplashText(text) {
-    splashElement.innerHTML = '';
-
-    if (isMobileByAspectRatio()) {
-      splashElement.style.writingMode = 'vertical-rl';
-      splashElement.style.textOrientation = 'upright';
-
-      for (const char of text) {
-        const span = document.createElement('span');
-        span.textContent = char;
-        span.style.display = 'block';
-        splashElement.appendChild(span);
-      }
-    } else {
-      splashElement.style.writingMode = 'horizontal-tb';
-      splashElement.style.textOrientation = 'initial';
-      splashElement.textContent = text;
-    }
-
-    updateSplashFontSize();
-  }
-
-  function showNextSplash() {
     splashElement.style.opacity = 0;
-
+  
     setTimeout(() => {
-      currentSplash = (currentSplash + 1) % splashes.length;
-      setSplashText(splashes[currentSplash]);
-      splashElement.style.opacity = 1;
+      splashElement.innerHTML = '';
+  
+      if (isMobileByAspectRatio()) {
+        splashElement.style.writingMode = 'vertical-rl';
+        splashElement.style.textOrientation = 'upright';
+  
+        for (const char of text) {
+          const span = document.createElement('span');
+          span.textContent = char;
+          span.style.display = 'block';
+          splashElement.appendChild(span);
+        }
+      } else {
+        splashElement.style.writingMode = 'horizontal-tb';
+        splashElement.style.textOrientation = 'initial';
+        splashElement.textContent = text;
+      }
+  
+      updateSplashFontSize();
+  
+      setTimeout(() => {
+        splashElement.style.opacity = 1;
+      }, 50);
+  
     }, 500);
+  }
+  
+  function showNextSplash() {
+    currentSplash = (currentSplash + 1) % splashes.length;
+    setSplashText(splashes[currentSplash]);
   }
 
   window.addEventListener('resize', updateSplashFontSize);
 
   setSplashText(splashes[currentSplash]);
-  splashElement.style.opacity = 1;
+
+  setTimeout(() => {
+    splashElement.style.opacity = 1;
+  }, 500);
 
   setInterval(showNextSplash, 5000);
 });
