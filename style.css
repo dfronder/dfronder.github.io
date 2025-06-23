@@ -251,9 +251,23 @@ canvas {
   background: none;
 }
 
-#sideMenu a:hover {
-  color: var(--menu-link-hover-color);
-  background: none;
+@media (hover: hover) and (pointer: fine) {
+  #sideMenu a:hover {
+    color: var(--menu-link-hover-color);
+    background: none;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  #sideMenu a {
+    color: var(--menu-link-hover-color);
+    background: none;
+  }
+
+  #sideMenu a:hover {
+    color: var(--menu-link-hover-color);
+    background: none;
+  }
 }
 
 /* 'Hamburger' menu (for mobile) */
