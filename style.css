@@ -34,7 +34,7 @@ html, body {
 :root {
   --bg-color: #F8F8F8;
   --icon-color: #898989;
-  --square-color: #B7B7B7;
+  --square-color: #D4D4D4;
   --icon-hover-color: #141414;
   --icon-mobile-color: #141414;
   --font-color: #141414;
@@ -102,7 +102,7 @@ canvas {
 
 #centerText {
   font-family: '5x5 font', sans-serif;
-  font-size: clamp(2rem, 9vw, 10vw);
+  font-size: clamp(2rem, 8vw, 6rem);
   color: var(--font-color);
   line-height: 1.2;
 }
@@ -114,15 +114,21 @@ canvas {
     justify-content: space-between;
     align-items: center;
     height: 100dvh;
-    padding: 1.875rem 0 3.75rem 0;
+    padding: 1.8rem 0 3.75rem 0;
     box-sizing: border-box;
     overflow: hidden;
     gap: 1.25rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    text-align: center;
   }
 
   #centerText {
-    font-size: clamp(2rem, 5vw, 8vw);
-    flex-shrink: 0;
+    font-size: clamp(1rem, 8vw, 2rem);
+    line-height: 1.2;
+    transform-origin: center;
   }
 
   #splashText {
@@ -284,12 +290,50 @@ canvas {
   display: none;
 }
 
+#menuToggle svg {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+#backIcon {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#hamburgerIcon {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+#hamburgerIcon.hidden,
+#backIcon.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 @media (max-aspect-ratio: 3 / 4) {
   #menuToggle {
+    top: 2rem;
+    left: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1300;
+    width: clamp(1rem, 8vw, 2rem);
+    height: clamp(1rem, 8vw, 2rem);
+  }
+
+  #themeToggle {
+    top: 1.6rem;
+    right: 1.6rem;
+    display: flex;
+    width: clamp(2.2rem, 8vw, 3rem);
+    height: clamp(2.2rem, 8vw, 3rem);
   }
 
   #sideMenu {

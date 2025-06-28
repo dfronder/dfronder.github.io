@@ -86,21 +86,28 @@ function updateFontSize() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
+  const hamburgerIcon = document.getElementById('hamburgerIcon');
+  const backIcon = document.getElementById('backIcon');
   const sideMenu = document.getElementById('sideMenu');
   const splashText = document.getElementById('splashText');
   const footerNote = document.getElementById('footerNote');
 
+  let isMenuOpen = false;
+
   menuToggle.addEventListener('click', () => {
-    const isOpen = sideMenu.classList.toggle('open');
+    isMenuOpen = !isMenuOpen;
+    sideMenu.classList.toggle('open', isMenuOpen);
+    splashText?.classList.toggle('menu-open', isMenuOpen);
+    footerNote?.classList.toggle('menu-open', isMenuOpen);
 
-    menuToggle.setAttribute('aria-expanded', isOpen);
-
-    if (isOpen) {
-      splashText.classList.add('menu-open');
-      footerNote.classList.add('menu-open');
+    if (isMenuOpen) {
+      hamburgerIcon.classList.add('hidden');
+      setTimeout(() => backIcon.style.display = 'block', 150);
+      setTimeout(() => backIcon.classList.remove('hidden'), 160);
     } else {
-      splashText.classList.remove('menu-open');
-      footerNote.classList.remove('menu-open');
+      backIcon.classList.add('hidden');
+      setTimeout(() => backIcon.style.display = 'none', 150);
+      setTimeout(() => hamburgerIcon.classList.remove('hidden'), 160);
     }
   });
 });
