@@ -25,7 +25,8 @@ html {
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: visible !important;
+  zoom: 1 !important;
   height: 100%;
   width: 100%;
   background-color: var(--bg-color);
