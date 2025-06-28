@@ -333,14 +333,14 @@ canvas {
   }
 
   #themeToggle {
-    top: 1.6rem;
-    right: 1.6rem;
+    top: 2.5rem;
+    right: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1300;
-    width: clamp(2.2rem, 10vw, 3rem);
-    height: clamp(2.2rem, 10vw, 3rem);
+    width: clamp(1rem, 8vw, 2rem);
+    height: clamp(1rem, 8vw, 2rem);
   }
 
   #sideMenu {
@@ -456,12 +456,13 @@ body.dark #aboutContent {
 
 #backButton {
   position: fixed;
-  top: 1.25rem;
-  left: 1.25rem;
+  top: 1.875rem;
+  left: 1.875rem;
+  width: 2.5rem;
+  height: 2.5rem;
   z-index: 2000;
   background: none;
   border: none;
-  font-size: 2rem;
   cursor: pointer;
   transition: opacity 0.3s ease, color 0.3s ease;
   color: var(--icon-color);
