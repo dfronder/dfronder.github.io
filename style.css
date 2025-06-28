@@ -332,8 +332,11 @@ canvas {
     top: 1.6rem;
     right: 1.6rem;
     display: flex;
-    width: clamp(2.2rem, 8vw, 3rem);
-    height: clamp(2.2rem, 8vw, 3rem);
+    align-items: center;
+    justify-content: center;
+    z-index: 1300;
+    width: clamp(2.2rem, 10vw, 3rem);
+    height: clamp(2.2rem, 10vw, 3rem);
   }
 
   #sideMenu {
