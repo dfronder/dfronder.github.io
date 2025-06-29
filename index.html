@@ -8,43 +8,46 @@
   <link rel="icon" href="images/seal.ico">
 </head>
 <body>
-  <button id="themeToggle" aria-label="Toggle theme">
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
-    <path d="M25 5H35V15H40V25H35V35H25V40H15V35H5V25H0V15H5V5H15V0H25V5ZM10 30H20V10H10V30Z"/>
-  </svg>
-  </button>
-  <button id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="sideMenu">
-    <svg id="hamburgerIcon" width="40" height="27" viewBox="0 0 40 27" fill="currentColor">
-      <path d="M40 27H0V22H40V27ZM40 16H0V11H40V16ZM40 5H0V0H40V5Z"/>
+  <div id="pageWrapper">
+    <button id="themeToggle" aria-label="Toggle theme">
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
+      <path d="M25 5H35V15H40V25H35V35H25V40H15V35H5V25H0V15H5V5H15V0H25V5ZM10 30H20V10H10V30Z"/>
     </svg>
-    <svg id="backIcon" width="40" height="25" viewBox="0 0 40 25" fill="currentColor">
-      <path d="M15 25H10V20H15V25ZM10 20H5V15H0V10H5V5H10V10H40V15H10V20ZM15 5H10V0H15V5Z"/>
-     </svg>
-  </button>
-  <div id="centerBlock">
-    <div id="centerText">DFRONDER</div>
-    <div id="splashText">初期のスプラッシュ</div>
+    </button>
+    <button id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="sideMenu">
+      <svg id="hamburgerIcon" width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
+        <path d="M40 33H0V28H40V33ZM40 22H0V17H40V22ZM40 11H0V6H40V11Z"/>
+      </svg>
+      <svg id="backIcon" width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
+        <path d="M15 32H10V27H15V32ZM10 27H5V22H0V17H5V12H10V17H40V22H10V27ZM15 12H10V7H15V12Z"/>
+       </svg>
+    </button>
+    <div id="centerBlock">
+      <div id="centerText">DFRONDER</div>
+      <div id="splashText">初期のスプラッシュ</div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div id="footerNote">DAVID FRONDER, 2025</div>
+    <nav id="sideMenu">
+      <ul>
+        <li class="top-item disabled">
+          <div class="menu-link">
+            <span class="menu-label">GALLERY</span>
+            <div class="menu-subtext">COMING SOON!</div>
+          </div>
+        </li>
+        <li><a href="https://t.me/dfronder" target="_blank" rel="noopener noreferrer">WALL</a></li>
+        <li><a href="https://medium.com/@dfronder" target="_blank" rel="noopener noreferrer">MEDIUM</a></li>
+        <li><a href="https://github.com/dfronder" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
+        <li><a href="https://osu.ppy.sh/users/36158491" target="_blank" rel="noopener noreferrer">OSU!</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
+    </nav>
+    <script src="js/theme.js" defer></script>
+    <script src="js/background.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/splash.js" defer></script>
+    <script src="js/transition.js" defer></script>
   </div>
-  <canvas id="canvas"></canvas>
-  <div id="footerNote">DAVID FRONDER, 2025</div>
-  <nav id="sideMenu">
-    <ul>
-      <li class="top-item disabled">
-        <div class="menu-link">
-          <span class="menu-label">GALLERY</span>
-          <div class="menu-subtext">COMING SOON!</div>
-        </div>
-      </li>
-      <li><a href="https://t.me/dfronder" target="_blank" rel="noopener noreferrer">WALL</a></li>
-      <li><a href="https://medium.com/@dfronder" target="_blank" rel="noopener noreferrer">MEDIUM</a></li>
-      <li><a href="https://github.com/dfronder" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
-      <li><a href="https://osu.ppy.sh/users/36158491" target="_blank" rel="noopener noreferrer">OSU!</a></li>
-      <li><a href="about.html">ABOUT</a></li>
-    </ul>
-  </nav>
-  <script src="js/theme.js" defer></script>
-  <script src="js/background.js" defer></script>
-  <script src="js/main.js" defer></script>
-  <script src="js/splash.js" defer></script>
 </body>
 </html>

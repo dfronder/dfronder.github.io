@@ -1,4 +1,6 @@
-/* Fonts */
+/***
+ * Fonts
+ ***/
 
 @font-face {
   font-family: 'JPFont';
@@ -25,8 +27,7 @@ html {
 html, body {
   margin: 0;
   padding: 0;
-  overflow: visible !important;
-  zoom: 1 !important;
+  overflow: hidden;
   height: 100%;
   width: 100%;
   background-color: var(--bg-color);
@@ -46,7 +47,7 @@ html, body {
 body.dark {
   --bg-color: #141414;
   --icon-color: #898989;
-  --square-color: #333333;
+  --square-color: #1d1d1d;
   --icon-hover-color: #F8F8F8;
   --icon-mobile-color: #F8F8F8;
   --font-color: #F8F8F8;
@@ -64,8 +65,8 @@ canvas {
 
 #themeToggle {
   position: absolute;
-  top: 1.875rem;
-  right: 1.875rem;
+  top: 2rem;
+  right: 2rem;
   width: 2.5rem;
   height: 2.5rem;
   display: flex;
@@ -334,8 +335,8 @@ canvas {
   }
 
   #themeToggle {
-    top: 2.5rem;
-    right: 2.5rem;
+    top: 2rem;
+    right: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -515,4 +516,14 @@ body.about {
   width: 100vw;
   height: 100vh;
   z-index: 0;
+}
+
+/***
+ * 'Transition'
+ ***/
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
