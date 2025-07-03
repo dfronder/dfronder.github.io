@@ -44,5 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function updateLogo() {
+  const logo = document.getElementById("centerText");
+  const short = logo.dataset.short;
+
+  if (window.matchMedia("(max-aspect-ratio: 1.5/3)").matches) {
+    logo.textContent = short;
+  } else {
+    logo.textContent = "DFRONDER";
+  }
+}
+
+window.addEventListener("DOMContentLoaded", updateLogo);
+window.addEventListener("resize", updateLogo);
 window.addEventListener('resize', updateFontSize);
 updateFontSize();

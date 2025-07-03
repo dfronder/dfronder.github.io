@@ -1,18 +1,25 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas?.getContext('2d');
 
+function getResponsiveSquareSize() {
+  const minDim = Math.min(window.innerWidth, window.innerHeight);
+  return Math.max(3, minDim / 150);
+}
+
+let squareSize = getResponsiveSquareSize();
+const squareCount = 100;
+const squares = [];
+
 function resizeCanvas() {
   if (!canvas) return;
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+
+  squareSize = getResponsiveSquareSize();
 }
 
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
-
-const squareCount = 100;
-const squareSize = 5;
-const squares = [];
 
 for (let i = 0; i < squareCount; i++) {
   squares.push({

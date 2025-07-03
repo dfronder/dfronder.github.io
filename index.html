@@ -9,21 +9,18 @@
 </head>
 <body>
   <div id="pageWrapper">
-    <button id="themeToggle" aria-label="Toggle theme">
+    <button class="icon-button" id="themeToggle" aria-label="Toggle theme">
     <svg width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
       <path d="M25 5H35V15H40V25H35V35H25V40H15V35H5V25H0V15H5V5H15V0H25V5ZM10 30H20V10H10V30Z"/>
     </svg>
     </button>
-    <button id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="sideMenu">
-      <svg id="hamburgerIcon" width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
+    <button class="icon-button" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="sideMenu">
+      <svg id="menuIcon" width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
         <path d="M40 33H0V28H40V33ZM40 22H0V17H40V22ZM40 11H0V6H40V11Z"/>
       </svg>
-      <svg id="backIcon" width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
-        <path d="M15 32H10V27H15V32ZM10 27H5V22H0V17H5V12H10V17H40V22H10V27ZM15 12H10V7H15V12Z"/>
-       </svg>
     </button>
     <div id="centerBlock">
-      <div id="centerText">DFRONDER</div>
+      <div id="centerText" data-short="DF.">DFRONDER</div>
       <div id="splashText">初期のスプラッシュ</div>
     </div>
     <canvas id="canvas"></canvas>
@@ -47,6 +44,7 @@
     <script src="js/background.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/splash.js" defer></script>
+    <script src="js/icon_change.js" defer></script>
     <script src="js/transition.js" defer></script>
   </div>
 </body>

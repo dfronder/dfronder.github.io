@@ -20,17 +20,20 @@
  * 'Main' page
  ***/
 
-html {
-  font-size: 18px;
-}
-
 html, body {
+  font-size: 18px;
   margin: 0;
   padding: 0;
   overflow: hidden;
   height: 100%;
   width: 100%;
   background-color: var(--bg-color);
+}
+
+@media (max-aspect-ratio: 4 / 3) {
+  html {
+    font-size: 16px;
+  }
 }
 
 :root {
@@ -60,40 +63,9 @@ canvas {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 0;
-}
-
-#themeToggle {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1300;
-}
-
-#themeToggle svg {
-  color: var(--icon-color);
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  #themeToggle:hover svg {
-    color: var(--icon-hover-color);
-  }
-}
-
-@media (hover: none), (pointer: coarse) {
-  #themeToggle svg {
-    color: var(--icon-mobile-color);
-  }
 }
 
 #centerBlock {
@@ -132,7 +104,7 @@ canvas {
   }
 
   #centerText {
-    font-size: clamp(1rem, 8vw, 2rem);
+    font-size: clamp(1rem, 14vw, 2rem);
     line-height: 1.2;
     transform-origin: center;
   }
@@ -281,70 +253,7 @@ canvas {
   }
 }
 
-#menuToggle {
-  color: var(--icon-mobile-color);
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  width: 3.75rem;
-  height: 3.75rem;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1200;
-  display: none;
-}
-
-#menuToggle svg {
-  width: 35px;
-  height: 35px;
-  position: absolute;
-  transition: opacity 0.3s ease;
-  opacity: 1;
-}
-
-#backIcon {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-#hamburgerIcon {
-  display: block;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-#hamburgerIcon.hidden,
-#backIcon.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
 @media (max-aspect-ratio: 3 / 4) {
-  #menuToggle {
-    top: 2rem;
-    left: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1300;
-    width: clamp(1rem, 8vw, 2rem);
-    height: clamp(1rem, 8vw, 2rem);
-  }
-
-  #themeToggle {
-    top: 2rem;
-    right: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1300;
-    width: clamp(1rem, 8vw, 2rem);
-    height: clamp(1rem, 8vw, 2rem);
-  }
-
   #sideMenu {
     display: block;
     opacity: 0;
@@ -417,6 +326,11 @@ canvas {
  * 'About' page
  ***/
 
+body.about {
+  overflow: hidden;
+  position: relative;
+}
+
 #aboutContent {
   position: absolute;
   top: 5rem;
@@ -427,15 +341,12 @@ canvas {
   padding: 1.5rem;
   box-sizing: border-box;
   z-index: 1000;
-
   font-family: '5x5 font', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   color: var(--font-color);
-
   max-width: 48rem;
   margin: 0 auto;
-
   scrollbar-width: none;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
@@ -452,72 +363,6 @@ canvas {
   }
 }
 
-body.dark #aboutContent {
-  background: none;
-}
-
-#backButton {
-  position: fixed;
-  top: 1.875rem;
-  left: 1.875rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  z-index: 2000;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: opacity 0.3s ease, color 0.3s ease;
-  color: var(--icon-color);
-}
-
-@media (max-aspect-ratio: 4 / 3) {
-  #backButton {
-    top: 1.5rem;
-    left: 1.5rem;
-  }
-}
-
-@media (hover: hover) and (pointer: fine) {
-  #backButton:hover {
-    color: var(--icon-hover-color);
-  }
-}
-
-@media (hover: none), (pointer: coarse) {
-  #backButton svg {
-    color: var(--icon-mobile-color);
-  }
-}
-
-body.about {
-  overflow: hidden;
-  position: relative;
-}
-
-#themeToggle {
-  position: fixed;
-  top: 1.25rem;
-  right: 1.25rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 2000;
-}
-
-#canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-}
-
 /***
  * 'Transition'
  ***/
@@ -526,4 +371,92 @@ body.about {
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
+}
+
+/***
+ * Icon Buttons (theme, menu, back)
+ ***/
+
+.icon-button {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: var(--icon-color);
+  z-index: 1300;
+  transition: color 0.3s ease;
+}
+
+.icon-button svg {
+  width: 80%;
+  height: 80%;
+  fill: currentColor;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.icon-button svg.fade-out {
+  opacity: 0;
+}
+
+#themeToggle {
+  top: 2rem;
+  right: 2rem;
+}
+
+#menuToggle {
+  top: 2rem;
+  left: 2rem;
+  display: none;
+}
+
+#backButton {
+  top: 2rem;
+  left: 2rem;
+}
+
+#menuToggle svg {
+  width: 80%;
+  height: 80%;
+  fill: currentColor;
+  transition: fill 0.3s ease;
+}
+
+@media (max-aspect-ratio: 3 / 4) {
+  .icon-button {
+    width: 35px;
+    height: 35px;
+    top: 2rem !important;
+  }
+
+  #themeToggle {
+    right: 2rem !important;
+  }
+
+  #menuToggle {
+    display: flex;
+  }
+
+  #menuToggle, #backButton {
+    left: 2rem !important;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .icon-button:hover svg {
+    color: var(--icon-hover-color);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .icon-button svg {
+    color: var(--icon-mobile-color);
+  }
 }

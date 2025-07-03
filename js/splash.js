@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function isMobileByAspectRatio() {
     const aspectRatio = window.innerWidth / window.innerHeight;
-    return aspectRatio < 3 /4;
+    return aspectRatio < 3 / 4;
   }
 
   function updateSplashFontSize() {
