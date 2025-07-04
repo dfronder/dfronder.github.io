@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://dfronder.ru/sitemap.xml
