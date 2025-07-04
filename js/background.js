@@ -3,7 +3,7 @@ const ctx = canvas?.getContext('2d');
 
 function getResponsiveSquareSize() {
   const minDim = Math.min(window.innerWidth, window.innerHeight);
-  return Math.max(3, minDim / 150);
+  return Math.max(3, minDim / 120);
 }
 
 let squareSize = getResponsiveSquareSize();

@@ -48,7 +48,7 @@ function updateLogo() {
   const logo = document.getElementById("centerText");
   const short = logo.dataset.short;
 
-  if (window.matchMedia("(max-aspect-ratio: 1.5/3)").matches) {
+  if (window.matchMedia("(max-aspect-ratio: 3 / 4)").matches) {
     logo.textContent = short;
   } else {
     logo.textContent = "DFRONDER";
